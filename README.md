@@ -129,6 +129,26 @@ Principais arquivos:
   ```sh
   npx cypress run
   ```
+### 📂 Cypress Custom Commands (`cypress/support/commands.js`)
+
+O arquivo `commands.js` contém comandos customizados do Cypress para facilitar e padronizar ações repetitivas nos testes automatizados.
+
+Principais comandos disponíveis:
+
+- `cy.login(usuario, senha)`: Faz login na aplicação preenchendo o formulário de login.
+- `cy.criaUsuarioComun()`: Cria um novo usuário comum com dados gerados automaticamente.
+- `cy.criaUsuarioAdministrador()`: Cria um novo usuário administrador com dados gerados automaticamente.
+
+Esses comandos tornam os testes mais legíveis, reutilizáveis e fáceis de manter.  
+Para utilizá-los, basta chamar o comando desejado dentro do seu teste, por exemplo:
+
+```javascript
+cy.login('Admin', 'Admin');
+cy.criaUsuarioComun();
+cy.criaUsuarioAdministrador();
+```
+
+O Cypress carrega automaticamente o arquivo `commands.js` antes de executar os testes.
 
 #### Geração de Dados
 
